@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>وارد کردن اطلاعات</title>
+</head>
+<body class="signUpformPage">
+    <div class="signUpformcontainer">
+        <section>
+            <h2>لطفا فرم زیر را پر کنید</h2>
+            <p class="signup_subhead">به منظور شروع تست اطلاعات خود را در فرم زیر وارد کنید تا پس از اتمام آزمون همکاران ما با شما تماس بگیرند.</p>
+        </section>
+        <div class="form_container_one">
+            <form action="#" method="post">
+                <div id="field_container_one">
+                <section class="field_container">
+                    <input type="text" placeholder="نام شما چیست؟" name="first_name" maxlength="50" id="signupField" class="fName_field" required>
+                </section>
+                <section class="field_container">
+                    <input type="text" placeholder="نام خانوادگی شما چیست؟" name="last_name" maxlength="150" id="signupField" class="lName_field" required>
+                </section>
+                <section class="field_container">
+                    <input type="number" name="phoneNumber" class="phone_number" id="signupField" maxlength="11" placeholder="با چه شماره‌ای در تماس باشیم؟"  required>
+                </section>
+                </div>
+                <div id="field_container_two">
+                    <section class="field_container" id="radioLabel" style="text-align: right; margin-top: -1%;">
+                        <h4>جنسیت:</h4>
+                        <section style="display: flex;margin-top: 5px;">
+                             <input type="radio" name="gender" value="male" class="gender_radio" name="gender_male" >
+                            <label for="gender_male" style="margin-left: 30px;margin-right: 5px;">آقا</label><br>
+                            <input type="radio" name="gender" value="female" class="gender_radio" name="gender_female">
+                             <label for="gender_female" style="margin-right: 5px;">خانم</label>
+                        </section>
+                    </section>
+                    <section class="field_container">
+                    <input type="text" placeholder="در چه تاریخی به دنیا آمدید؟" name="birthdate" id="signupField" class="birthdate_field" onfocus="(this.type = 'date')" onblur="(this.type = 'text')">
+                    </section>
+                    <section class="field_container">
+                        <input type="text" placeholder="در کدام شهر ساکن هستید؟" name="city" id="signupField" class="city_field" >
+                    </section>
+                </div>
+                <input type="submit" value="شروع آزمون" class="signUpFrm_submit">
+                
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

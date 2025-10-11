@@ -1,0 +1,827 @@
+@font-face {
+    font-family: 'peyda-light';
+    src: url('assets/fonts/Peyda-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'peyda-bold';
+    src: url('assets/fonts/Peyda-ExtraBold.ttf');
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'peyda-black';
+    src: url('assets/fonts/Peyda-Black.ttf');
+    font-weight: 900;
+}
+:root{
+    --white2: #FFFFFF;
+    --gray: #F8F9FA;
+    --black: #292827;
+    --red: #FC372B;
+    --green: #1E3C34;
+    --field:#F9F6EE;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+/*starting to write css code for home page*/
+.page_container{
+    height: 100vh;
+    background-color: var(--gray);
+}
+.data_container{
+    display:flex;
+}
+h1, h2, h3, h4, h5,h6{
+    font-family: 'peyda-bold';
+}
+
+h1{
+    font-size: 34px;
+    line-height: 2em;
+    color: black;
+
+}
+h2{
+    font-size:30px;
+    line-height: 2em;
+    color: black;
+
+}
+h3{
+    font-size: 24px;
+    line-height: 2em;
+    color: black;
+
+}
+h4{
+    font-size: 20px;
+    line-height: 2em;
+    color: black;
+}
+h5{
+    font-size: 18px;
+    line-height:2em;
+    color: black;
+}
+h6{
+    font-size: 16px;
+    line-height: 2em;
+    color: black;
+}
+p{
+    font-size: 14px;
+    line-height: 1.7em;
+    color: black;
+    font-family: 'peyda-light' !important;
+}
+
+
+/*css code for home page left-hand side piture*/
+.picture_container{
+    background-image: url('assets/images/DSC_0333.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position-y: center;
+    width:120%;
+    height: 100vh;
+}
+
+/* css code for home page right-hand side text section*/
+.page_text_container{
+    align-content: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+}
+p{
+    text-align: justify;
+    font-family: peyda;
+}
+button{
+    width: 208px;
+    height: 46px;
+    font-size: 14px;
+    margin-top: 10%;
+    border: none;
+    border-radius: 10px;
+    font-family: 'peyda-light';
+}
+
+/* start the button that starts test page*/
+.start_test_button{
+    background-color: var(--green);
+    color: var(--white2);
+}
+.start_test_button:hover{
+    background-color: rgba(0,0,0,0);
+    color: var(--green);
+    border: 2px solid var(--green);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+/*end button that starts test page*/
+
+/*start the button that goes to dashboard login page*/
+.personel_login_button{
+    background-color: rgba(0,0,0,0);
+    border: 2px solid var(--green);
+    color: var(--green);
+    margin-right: 10%;
+}
+.personel_login_button:hover{
+    background-color: var(--green);
+    border: none;
+    color: var(--white2);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+/*end the button that goes to dashboard login page*/
+
+/* start home page texts*/
+.title_font{
+    line-height: 5em;
+    font-family: 'peyda-bold';
+}
+.paragraph_text{
+    font-family: 'peyda-light';
+}
+/* end home page texts*/
+
+/*start signup page*/
+
+.signUpformcontainer{
+    align-content:center;
+    text-align: center;
+    width: 100%;
+    min-width: 50%;
+    max-width: 100%;
+    height: 100vh;
+    background-color: var(--gray);;
+}
+.signup_subhead{
+    text-align: center;
+    font-family: 'peyda-light';
+    font-size: 14px;
+    margin-bottom: 4%;;
+
+}
+.form_container_one{
+    width: 90%;
+    align-content: center;
+    padding-right: 5%;
+    margin-right: 5%;
+}
+#form_container_one{
+    width: 100%;
+    align-content: center;
+    padding-right: 5%;
+}
+#field_container_one, #field_container_two{
+    width: 80%;
+    display: block;
+    margin-right: 5%;
+    display: flex;
+    column-gap: 41px;
+}
+#field_container_two{
+    margin-top: 3%;
+}
+label{
+    font-family: 'peyda-light';
+    font-size: 14px;
+}
+.field_container{
+    width: 31%;
+    height: auto;
+}
+#signupField{
+    direction: rtl;
+    width: 86%;
+    background-color: var(--field);
+    border: 0px;
+    height: 51px;
+    border-radius: 10px;
+    font-family: 'peyda-light';
+    font-size: 14px;
+    padding-right: 40px;
+    padding-left: 10px;
+    background-image: url(assets/images/user.png);
+    background-position: 97% 12px;
+    background-size: 23px 23px;
+    background-repeat: no-repeat;
+    color: black;
+}
+.phone_number{
+    background-image: url(assets/images/phone-call.png) !important;
+}
+.birthdate_field{
+    background-image: url(assets/images/calendar.png) !important;
+}
+.city_field{
+    background-image: url(assets/images/international.png) !important;
+}
+.signUpFrm_submit{
+    margin-top: 5%;
+    background-color: var(--green);
+    border: 0px;
+    color: white;
+    font-family: 'peyda-light';
+    font-size: 14px;
+    width: 248px;
+    height: 49px;
+    border-radius: 10px;
+    margin-left: 12%;
+}
+.signUpFrm_submit:hover{
+    cursor: pointer;
+    background-color: var(--white2);
+    color: var(--green);
+    border: 2px solid var(--green);
+    background-image: url(assets/images/neext.png) o !important;
+    background-repeat: no-repeat;
+    background-position: 70% 12px;
+    background-size: 20px 20px;
+    transition: 0.3s ease-in-out;
+}
+/*end sign up page*/
+/*login page start*/
+.personel_login_form_page{
+    background-image: url(assets/images/DSC_0335.JPG);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: var(--black);
+    background-blend-mode:hard-light;
+    height: 100vh;
+    align-content: center;
+    text-align: center;
+
+}
+.login_page_icon{
+    width: 50px;
+    height: 50px;
+    background-color: var(--green);
+    padding: 15px;
+    border-radius: 100px;
+    z-index: 2;
+}
+.personel_form_login_container{
+    text-align: center;
+}
+.form_holder{
+    display: flex;
+    justify-content: center;
+    margin-top: -1%;
+    z-index: 0;
+}
+.login_form{
+    background-color: #ffffffc5;
+    width: 30%;
+    height: 300px;
+    display: block;
+    align-content: center;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 1;
+}
+.login_form_container {
+    position: relative; /* makes absolute children positionable */
+}
+.personel_form_login_container{
+    z-index: 1;
+}
+.login_field{
+    width: 290px;
+    height: 41px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--field);
+    font-family: 'peyda-light';
+    color: var(--black);
+    padding-right: 40px;
+    padding-left: 30px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+#login_username{
+    background-image: url(assets/images/user.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 97%;
+}
+#login_password{
+    background-image: url(assets/images/passkey.png);
+    background-position: 97%;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+.btn_form_submit{
+    width: 40%;
+    background-color: var(--green);
+    border: none;
+    margin-top: 5%;
+    color:white;
+    font-family: 'peyda-bold';
+    height: 40px;
+    border-radius: 10px;
+}
+.btn_form_submit:hover{
+    cursor: pointer;
+    background-color: rgba(0,0,0,0);
+    border: 2px solid var(--green);
+    color: var(--green);
+    transition: 0.3s ease-in-out;
+}
+/*end login page*/
+/*start exam div*/
+.start_exam_page{
+    background-color: var(--gray);
+    height: 100vh;
+    width: 100%;
+}
+.exam_introduction{
+    width: 80%;
+    display:flex;
+    height: 100vh;
+    background-color: var(--gray);
+    text-align: center;
+    column-gap: 100px;
+    margin-right: 10%;
+    align-items: center;
+}
+.text_holder{
+    width: 50%;
+    max-width: 60%;
+}
+.image_holder{
+    width: 40%;
+}
+.image_exam{
+    width: 500px;
+    background-blend-mode:darken;
+}
+.start_exam_button{
+    float: left;
+    background-color: var(--green);
+    color: var(--white2);
+}
+.start_exam_button:hover{
+    background-color: var(--gray);
+    border: 2px solid var(--green);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    color: var(--green);
+}
+.paragraph_introcution_exam{
+    font-family: 'peyda-light';
+}
+.title_introduction_exam{
+    text-align: right;
+}
+/*end start exam page*/
+/*start personel dashboard page*/
+.dashboardParent{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+.nav_section{
+    display: block;
+    justify-items: center;
+    width: 20%;
+    height: 100vh;
+    background-color: var(--white2);
+    align-items: center;
+    position:sticky;
+
+}
+.content_holder{
+    width: 80%;
+    display: block;
+}
+.profile_holder{
+    display: flex;
+    column-gap: 10px;
+    justify-content: center;
+    margin-right: -5%;
+    margin-top: 25%;
+
+}
+.dashboard_nav{
+    display: block !important;
+    align-content: center;
+    margin-top: 40%;
+    margin-right: 20%;
+    width: 80%;
+    padding: 0px;
+}
+.nav_item{
+    display: flex;
+    column-gap: 10px;
+    margin-bottom:3%;
+    width: 80% !important;
+    padding: 0px;
+    max-width: 100% !important;
+    height: 50px;
+    align-items: center;
+}
+.nav_item:hover{
+    cursor: pointer;
+    background-color: var(--gray);
+    padding-right: 10%;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    width: 80% !important;
+}
+.nav_title{
+    list-style: none;
+    font-family: 'peyda-light';
+    font-size: 14px;
+}
+.nav_title a{
+    text-decoration: none;
+    color: var(--black);
+}
+.dashboard_nav_footer{
+    text-align: center;
+    margin-top: 60%;
+    font-size: 12px;
+}
+.introduction_div{
+    display: block;
+    width: 90%;
+    background-image: linear-gradient(to right,var(--red), #ff8fa3);
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 5%;
+    box-sizing: border-box;
+    padding: 3%;
+}
+.intro_sections{
+    display: flex;
+    column-gap: 100px;
+    margin-top: 4%;
+}
+.intro_item{
+    background-color: var(--white2);
+    width: 25%;
+    height: 120px;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    padding: 2%;
+    box-sizing: border-box;
+}
+.intro_title{
+    text-align: center;
+}
+.quick_actions_div{
+    display: flex;
+    column-gap: 50px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 3%;
+}
+.quick_action_one{
+    background-color: var(--white2);
+    border-radius: 10px;
+    height: max-content;
+    align-content: center;
+    padding: 3%;
+    box-sizing: border-box;
+    row-gap: 20px;
+    width: 45%;
+    box-shadow: 2px 2px 15px -2px rgba(0,0,0,0.2);
+}
+.add_question_icon{
+    background-image: linear-gradient(to right, var(--red),#ff8fa3);
+    width: 80px;
+    height: 80px;
+    padding: 3%;
+    box-sizing: border-box;
+    border-radius: 100px;
+    margin-bottom: 20px;
+    float: left;
+}
+.add_question_desc{
+    margin-top: 7px;
+    width: 70%;
+}
+.add_question_button{
+    background-color: var(--white2);
+    text-align: right;
+    color: var(--black);
+}
+.add_question_button:hover{
+    background-color: var(--green);
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    color: var(--white2);
+}
+.quick_action_two{
+    width: 50%;
+    display: block;
+    row-gap: 20px;
+}
+.questions_container{
+    background-color: var(--white2);
+    padding: 5%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 2px 5px 15px -2px rgba(0,0,0,0.2);
+}
+.question_title{
+    font-size: 18px;
+}
+.question_title:hover{
+    color: var(--green);
+    cursor: pointer;
+}
+.responsive_header{
+    display: none;
+    visibility: hidden;
+}
+/*end of personel dashboard*/
+
+/*footer*/
+.footer{
+    display: none;
+    visibility: hidden;
+}
+/* starting to make home page responsive*/
+@media only screen and (max-width: 600px){
+
+    /*index page*/
+    .page_container{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .data_container{
+        display: inline-block;
+        max-width: 100%;
+        width: 100%;
+        min-width: 70%;
+        background-color: var(--gray);
+        height: auto;
+    }
+    .page_text_container{
+        display: inline;
+        align-content: center;
+        width: 80%;
+        padding-right: 30px !important;
+        max-width: 80%;
+    }
+    .picture_container{
+        width: 100%;
+        background-image: url('assets/images/2025-09-1919.45.44.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        align-self:normal;
+        border-radius: 10px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    .button_container{
+        display: flex;
+    }
+    button{
+        width: 45%;
+        height: 46px;
+        font-size: 14px;
+        margin-top: 10%;
+        border-radius: 10px;
+        border: none;
+        font-family: 'peyda-light';
+    }
+    .personel_login_button{
+        background-color: rgba(0,0,0,0);
+        border: 2px solid var(--green);
+        color: var(--green);
+        margin-right: 10%;
+    }
+    /*end of index page*/
+
+    /*sign up form page*/
+    .signUpformPage{
+        text-align: center;
+        background-color: var(--gray);
+        width: 100%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+    .signup_subhead{
+        text-align: center !important;
+    }
+    .signUpformcontainer{
+        text-align: center;
+        padding: 0px;
+        width: 90%;
+        margin-right: 5%;
+    }
+    .form_container_one{
+        text-align: center;
+        width: 95%;
+    }
+    #field_container_one, #field_container_two{
+        display:inline-block !important;
+        width: 100%;
+        margin-right: -1%;
+    }
+    #field_container_two{
+        margin-top: 20px;
+    }
+    .field_container{
+        width: 100%;
+        padding: 0px;
+        margin-top: 20px;
+    }
+    #signupField{
+        width: 80%;
+    }
+    #radioLabel{
+        margin-top: 20px;
+        margin-right: 6%;
+    }
+    #field_container_two{
+        margin-top: 20px;
+    }
+    .signUpFrm_submit{
+        margin-right: 5%;
+    }
+    /*end*/
+    /*start exam page start*/
+    .exam_introduction{
+        display: block !important;
+        width: 100%;
+        height: 100vh;
+        column-gap: 0px !important;
+        row-gap: 0px !important;
+        margin: 0px;
+        align-content: center;
+        justify-items: center;
+        text-align: center;
+    }
+    .start_exam_page{
+        background-color: var(--gray);
+        width: 100%;
+        display: block !important;
+        justify-self:center;
+        justify-content: center;
+    }
+    .text_holder{
+        width: 80% !important;
+        max-width: 100%;
+    }
+    .image_exam{
+        width: 70%;
+    }
+    .image_holder{
+        width: 90%;
+        max-width: 100%;
+    }
+    /*end start exam page*/
+    /*start personel dashboard page*/
+    body{
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+        text-align: center;
+        justify-items: center;
+    }
+    .introduction_div{
+        padding-top: 25px;
+        box-sizing: border-box;
+    }
+    /* clip everything that goes outside */
+.intro_wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;            /* <-- clips children and shadows */
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+/* keep the horizontal slider scrollable but constrained by wrapper */
+.intro_sections {
+  display: flex;
+  gap: 16px;
+  padding: 10px 12px;          /* internal spacing */
+  overflow-x: auto;            /* allow horizontal scrolling */
+  overflow-y: hidden;          /* prevent vertical overflow */
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  margin: 0;                   /* remove possible margins that leak */
+  box-sizing: border-box;
+}
+
+/* hide native scrollbar if you want */
+.intro_sections::-webkit-scrollbar { display: none; }
+.intro_sections { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* each item */
+.intro_item {
+  min-width: 60%;            /* or whatever width you need */
+  flex: 0 0 auto;              /* prevent shrinking */
+  scroll-snap-align: start;
+  box-sizing: border-box;      /* important so padding doesn't grow it */
+  /* remove negative margins or large transforms on the items */
+}
+
+/* Fix for shadows bleeding: wrapper will clip them; if you want inner item shadows visible,
+   reduce shadow blur/spread or create inner-shadow instead */
+
+    .intro_sections::-webkit-scrollbar{
+        display: none;
+    }
+    .nav_section{
+        display: none;
+    }
+    .content_holder{
+        width: 100%;
+        display: block;
+        text-align: right;
+    }
+    .dashboard_holder{
+        width: 100%;
+    }
+    .quick_actions_div{
+        display: block;
+        margin-top: 60px;
+        margin-bottom: 100px;
+        box-sizing: border-box;
+        padding-bottom: 100px;
+    }
+    .quick_action_one{
+        width: 100%;
+        margin-top: 30px;
+        padding: 15px;
+    }
+    .add_question_icon{
+        width: 60px;
+        height: 60px;
+    }
+    .quick_action_two{
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+    .latest_questions_title{
+        margin-bottom: -20px;
+    }
+
+    /*end personel dashboard page*/
+    /*footer start*/
+    .footer{
+    display: flex !important;
+    width: 100%;
+    background-color: var(--white2);
+    padding: 2%;
+    box-sizing: border-box;
+    column-gap: 0px;
+    visibility:visible;
+    margin-top: 0 auto;
+    position: fixed;
+    padding-right: 8px;
+    padding-left: 20px;
+    bottom: 0;
+    right: 0;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 999;
+    border-top: 1px solid #e0e0e0;
+    }
+    .footer_section{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        width: 22% auto;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .footer_logo{
+        width: 30%;
+        height: auto;
+        display: block;
+        margin-top: 4px;
+    }
+    .footer_item_title{
+        font-family: 'peyda-light';
+        font-size: 13px;
+        text-align: center;
+        margin: 0;
+    }
+
+
+    
+}
