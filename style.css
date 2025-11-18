@@ -388,6 +388,9 @@ label{
     height: 100vh;
     display: flex;
 }
+.dashboard_holder{
+    display: block;
+}
 .nav_section{
     display: block;
     justify-items: center;
@@ -484,7 +487,7 @@ label{
     column-gap: 50px;
     width: 90%;
     margin: 0 auto;
-    margin-top: 3%;
+    margin-top: 7%;
 }
 .quick_action_one{
     background-color: var(--white2);
@@ -547,13 +550,330 @@ label{
     display: none;
     visibility: hidden;
 }
+.question_holder{
+    display: none;
+    width: 90%;
+    margin: 0 auto;
+    height: 300px;
+    padding: 3%;
+    box-sizing: border-box;
+}
+.title_holder{
+    width: 80%;
+    align-items: center;
+}
+.addForm_btn{
+    width: 20%;
+    float: left;
+    padding: 0;
+}
+.addQuestion_form{
+    width: 60%;
+    float: left;
+    background-color: var(--white2);
+    border: 1px solid var(--red);
+}
+.addQuestion_form:hover{
+    width: 60%;
+    background-color: var(--red);
+    border: none;
+    transition: 0.3s ease-in-out;
+    color: var(--white2);
+    cursor: pointer;
+}
+.question_list{
+    margin-top: 5%;
+}
+.question_repeater{
+    background-color: var(--white2);
+    border-radius: 10px;
+    padding: 3%;
+    gap: 10px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+    margin-bottom: 15px;
+}
+.question_repeater_title:hover{
+    color: var(--green);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.personel_holder{
+    display: none;
+}
+.personel_inner_container{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5%;
+    box-sizing: border-box;
+}
+.personel_container{
+    margin-top: 3%;
+    display: flex;
+    width: 90%;
+    column-gap: 30px;
+}
+.userProfileName{
+    margin-top: 15px;
+    font-size: 16px;
+}
+.personel_profile{
+    background-color: var(--white2);
+    padding: 2%;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.result_holder{
+    display: none;
+}
+.result_inner_container{
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 3%;
+    box-sizing: border-box;
+}
+.result_intro{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    height: fit-content;
+}
+.result_div_title{
+    width: 80%;
+    align-content: center;
+    padding-top: 1%;
+}
+.students_list_btn{
+    background-color: var(--white2);
+    border: 1px solid var(--red);
+    
+}
+.students_list_btn:hover{
+    background-color: var(--red);
+    border: none;
+    color: var(--white2);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.result_repeater{
+    background-color: var(--white2);
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    padding: 3%;
+    margin-bottom: 15px !important;
+}
+.result_container{
+    margin-bottom: 50px !important;
+}
+#volunteer_holder{
+    display: none;
+}
+.volunteer_profile{
+    width: 25%;
+    height: auto;
+    border-radius: 10px;
+}
+.volunteerـsingle{
+    display: flex;
+    column-gap: 40px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+.volunteer_txt_data{
+    display: block;
+}
+.volunteer_button{
+    width: max-content;
+    background-color: rgba(0,0,0,0);
+}
+.volunteer_button:hover{
+    background-color: var(--red);
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    color: var(--white2);
+}
 /*end of personel dashboard*/
 
+/*start of profile editor*/
+.section_holders{
+    display: flex;
+    column-gap: 50px;
+}
+
+.profile_field_holder{
+    width: 100% !important;
+    display: block;
+}
+.field_holder{
+    width: 100%;
+}
+.row_one_holder{
+    display: flex;
+    column-gap: 30px;
+}
+.institute_profile_picture{
+    width: 190px;
+    height: 190px;
+    border-radius: 100px;
+}
+.institute_data_holder{
+    width: 100%;
+}
+.data_container{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 7%;
+}
+.institute_data_holder{
+    width: 100%;
+    align-items: center;
+    display: none;
+}
+
+.row_one_field_holder{
+    display: block;
+}
+label{
+    font-size: 16px;
+    font-family: 'peyda-bold';
+    margin-bottom: 15px;
+}
+.institute_name, .institute_support, .support_telegram, .institue_address, .institute_instagram{
+    background-color: #F9F6EE;
+    height: 47px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    font-family: 'peyda-light';
+    padding: 0 5px;
+}
+.institute_name, .institute_support, .support_telegram, .institue_address, .institute_instagram :active{
+    border: 0px;
+    outline: none;
+}
+.row_two_holder{
+    display: flex;
+    column-gap: 40px;
+    margin-top: 40px;
+}
+.row_two_field_holder_one{
+    width: 62%;
+}
+.profile_submite{
+    background-color: var(--red);
+    border: none;
+    border-radius: 6px;
+    width: 150px;
+    height: 35px;
+    font-family: 'peyda-light';
+    color: var(--white2);
+    margin-top: 40px;
+}
+.profile_submite:hover{
+    background-color: var(--white2);
+    border: 1px solid var(--red);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    color: var(--red);
+}
 /*footer*/
 .footer{
     display: none;
     visibility: hidden;
 }
+
+/*starting add question pop up*/
+#new_question_modal_container{
+    width: 70%;
+    padding: 3% !important;  
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: var(--white2);
+    display: none;
+    position: fixed;
+    top: 45px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 87vh;
+    transition: all 0.3s ease-in-out;
+}
+.wrong_question_adder{
+    width: 25px;
+    background-color:var(--white2);
+    padding: 1.5%;
+    border-radius: 100px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    float: left;
+    margin-top: 20px;
+    margin-right: 25px !important; 
+    position: relative;
+}
+.new_question_modal{
+    width: 97%;
+}
+.wrong_question_adder:hover{
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0);
+    transition: 0.2s ease-in-out;
+}
+
+.add_question_form_input{
+    width: 100%;
+}
+.question_adder_title{
+    margin-top: 40px;
+    display: block;
+}
+.add_question_form_input{
+    height: 47px;
+    border-radius: 6px;
+    border: 0px;
+    font-family: 'peyda-light';
+    font-size: 14px;
+    width: 100%;
+    background-color: #F9F6EE;
+    color: #8D8D8D;
+    align-items: center;
+    padding-right: 2%;
+    padding-left: 2%;
+    margin-top: 10px;
+}
+.add_question_submit_btn{
+    background-color: var(--red);
+    width: 20%;
+    margin-top: 100px;
+    border-radius: 6px;
+    border: 0px;
+    height: 35px;
+    font-family: 'peyda-bold';
+    color: var(--white2);
+    font-size: 14px;
+}
+.add_question_submit_btn:hover{
+    background-color: var(--green);
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+.add_question_form_title{
+    margin-bottom: 100px;
+}
+.add_question_form_input:focus{
+    border: 0px;
+}
+#addQuestion_modal_closer{
+    width: 15px;
+    position: relative;
+    float: left;
+    right: 25px;
+}
+
 /* starting to make home page responsive*/
 @media only screen and (max-width: 600px){
 
@@ -778,7 +1098,45 @@ label{
     .latest_questions_title{
         margin-bottom: -20px;
     }
-
+    .question_page_title{
+        font-size: 16px;
+    }
+    .title_holder{
+        width: 70%;
+    }
+    .addForm_btn{
+        width: 30%;
+    }
+    .addQuestion_form{
+        width: 100%;
+    }
+    .addQuestion_form:hover{
+        width: 100%;
+    }
+    .question_list{
+        margin-top: 15%;
+    }
+    .question_repeater{
+        padding: 7%;
+        margin-bottom: 15px;
+    }
+    .question_repeater_title{
+        font-size: 16px;
+        line-height: 2em;
+    }
+    .question_repeater_title:hover{
+        color: var(--green);
+    }
+    .personel_container{
+        display: block;
+        margin-bottom: 70px;
+    }
+    .personel_profile{
+        width:max-content;
+        padding: 5%;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
     /*end personel dashboard page*/
     /*footer start*/
     .footer{
@@ -821,7 +1179,58 @@ label{
         text-align: center;
         margin: 0;
     }
+    .result_inner_container{
+        display: block;
+        width: 100%;
+        padding: 6%;
+        box-sizing: border-box;
+    }
+    .result_intro{
+        display: flex;
+        gap: 30px;
+    }
+    .result_div_title{
+        width: 70%;
+    }
+    .result_intro_title{
+        font-size: 14px;
+        line-height: 1.7em;
+    }
+    .result_div_btn{
+        width: 30%;
+    }
+    .students_list_btn{
+        width: 100%;
+        padding: 4%;
+        box-sizing: border-box;
+        font-size: 12px;
+    }
+    .result_container{
+        margin-top: 50px !important;
+        margin-bottom: 70px !important;
+    }
+    .volunteer_header{
+        margin-top: 5%;
+    }
+    .volunteer_title{
+        font-size: 18px !important;
+        line-height: 1.7em;
+        text-align: justify;
+        margin-top: 5%;
+    }
+    .volunteer_profile{
+        width: 50%;
+        height: 50%;
+    }
+    .volunteer_name{
+        font-size: 14px;
+    }
+    .volunteerـsingle{
+        column-gap: 20px;
+        margin-bottom: 30px;
+    }
+    .volunteer_phoneNumber{
+        font-size: 12px;
+    }
 
-
-    
 }

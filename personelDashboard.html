@@ -16,29 +16,29 @@
         <aside class="nav_section">
             <section class="profile_holder">
                 <section class="image_holder_profile">
-                    <img src="assets/images/photo_2025-09-27 15.41.20.jpeg" class="profile_picture" width="70" height="70" style="border-radius: 100px;" onclick="document.location='#'" >
+                    <img src="assets/images/photo_2025-09-27 15.41.20.jpeg" class="profile_picture" id="profile_picture" width="70" height="70" style="border-radius: 100px; cursor: pointer;" onclick="showdashboard()" >
                 </section>
                 <section class="profile_name_holder">
-                    <h4 class="profoile_name_txt">آموزشگاه گلستان</h4>
-                    <p class="profile_subhead">نام کاربر میاد اینجا</p>
+                    <h4 class="profoile_name_txt" style="cursor: pointer;" onclick="showdashboard()">آموزشگاه گلستان</h4>
+                    <p class="profile_subhead" onclick="showeditor()" style="cursor: pointer;">نام کاربر میاد اینجا</p>
                 </section>
             </section>
             <nav>
                 <ul class="dashboard_nav">
-                    <section class="nav_item">
+                    <section class="nav_item" onclick="showquestion()">
                         <img src="assets/images/qa.png" width="25" height="25">
                         <li class="nav_title"><a href="#">سوالات</a></li>
                     </section>
-                    <section class="nav_item">
+                    <section class="nav_item" onclick="showresults()">
                         <img src="assets/images/research.png" width="25" height="25">
                         <li class="nav_title"><a href="#">نتایج</a></li>
                     </section>
-                    <section class="nav_item">
+                    <section class="nav_item" onclick="showvolunteer()">
                         <img src="assets/images/chat.png" width="25" height="25">
                         <li class="nav_title"><a href="#">متقاضیان</a></li>
                     </section>
                     <a href="#">
-                        <section class="nav_item">
+                        <section class="nav_item" onclick="showpersonel()">
                         <img src="assets/images/team.png" width="25" height="25">
                         <li class="nav_title"><a href="#">پرسنل</a></li>
                     </section>
@@ -48,7 +48,7 @@
             <p class="dashboard_nav_footer">طراحی و توسعه توسط فریم مدیا</p>
         </aside>
         <div class="content_holder" >
-            <div class="dashboard_holder">
+            <div class="dashboard_holder" id="dashboard_holder">
                 <div style="display: block; width: 100%;">
                     <div class="introduction_div">
                         <section>
@@ -79,7 +79,7 @@
                             <img src="assets/images/qa.png" alt="qustion icon" class="add_question_icon">
                             <h4 class="add_question_title">افزودن سوال</h4>
                             <p class="add_question_desc">از طریق این بخش می‌توانید به صورت مستقیم سوال اضافه کنید.</p>
-                            <button type="button" onclick="document.location='#'" class="add_question_button">افزودن سوال</button>
+                            <button type="button"  class="add_question_button" onclick="showquestion()">افزودن سوال</button>
                         </section>
                         <section class="quick_action_two">
                             <h3 class="latest_questions_title">آخرین سوالات طرح شده</h3>
@@ -91,9 +91,139 @@
                     </div>
                 </div>
             </div>
-            <div class="question_holder">
+            <div class="question_holder" id="question_holder">
                 <div style="display: block; width: 100%;">
-                    
+                    <div style="display: flex; width: 100%; align-items: center;">
+                        <section class="title_holder">
+                            <h3 class="question_page_title" style="margin-top: 2%; ">لیست سوالات تعیین سطح</h3>
+                        </section>
+                        <section class="addForm_btn">
+                            <button class="addQuestion_form" id="addQuestion_form" type="button" onclick="showAddQuestionModal()">افزودن سوال</button>
+                        </section>
+                    </div>
+                    <div class="question_list">
+                        <div class="question_repeater">
+                            <h4 class="question_repeater_title">عنوان سوال میاد و در اینجا قرار میگیره</h4>
+                            <p class="category_placement">نام دسته بندی میاد اینجا</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="personel_holder" id="personel_holder">
+                <div class="personel_inner_container">
+                    <h3 class="section_title" style="margin-top: 1%;">پرسنل آموزشگاه</h3>
+                    <div class="personel_container">
+                        <section class="personel_profile">
+                            <img src="assets/images/userprofile.jpg" alt="user profile picture" width="270" style="border-radius: 10px;" class="user_prfile_photo">
+                            <h4 class="userProfileName">نام و نام خانوادگی کاربر</h4>
+                            <p class="userProfileRole">سمت کاربر</p>
+                        </section>
+                        <section class="personel_profile">
+                            <img src="assets/images/userprofile.jpg" alt="user profile picture" width="270" class="user_prfile_photo" style="border-radius: 10px;">
+                            <h4 class="userProfileName">نام و نام خانوادگی کاربر</h4>
+                            <p class="userProfileRole">سمت کاربر</p>
+                        </section>
+                        <section class="personel_profile">
+                            <img src="assets/images/userprofile.jpg" alt="user profile picture" width="270" class="user_prfile_photo" style="border-radius: 10px;">
+                            <h4 class="userProfileName">نام و نام خانوادگی کاربر</h4>
+                            <p class="userProfileRole">سمت کاربر</p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div id="volunteer_holder">
+                <div class="personel_inner_container">
+                    <div class="volunteer_header" style="margin-bottom: 60px;">
+                        <h3 class="volunteer_title">داوطلبین شرکت درآزمون تعیین سطح</h3>
+                    </div>
+                    <section class="volunteerـsingle">
+                        <img src="assets/images/userprofile.jpg" alt="volunteer profile" class="volunteer_profile">
+                        <content class="volunteer_txt_data">
+                            <h3 class="volunteer_name">سهیل عابدین پور</h3>
+                            <p class="volunteer_phoneNumber">093********</p>
+                            <button class="volunteer_button">مشاهده کارنامه</button>
+                        </content>
+                    </section>
+                </div>
+            </div>
+            <div class="result_holder" id="result_holder" style="width: 100%;">
+                <div class="result_inner_container">
+                    <div class="result_intro">
+                        <section class="result_div_title">
+                            <h3 class="result_intro_title">نتایج کسب شده در آزمون تعیین سطح</h3>
+                        </section>
+                        <section class="result_div_btn">
+                            <button type="button" class="students_list_btn" onclick="showvolunteer()">لیست متقاضیان</button>
+                        </section>
+                    </div>
+                    <div class="result_container" style="margin-top: 5%; margin-bottom: 50px; display: block;">
+                        <div class="result_repeater"> 
+                            <h4 style="margin-bottom: 10px; line-height: 2em; text-align: justify;">نام و نام خانوادگی متقاضی</h4>
+                            <p>نمره آزمون: <span>82</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="institute_data_holder" id="profile_editor_holder">
+                <div class="data_container">
+                    <div class="section_holders">
+                        <section class="image_changer">
+                            <img src="assets/images/photo_2025-09-27 15.41.20.jpeg" alt="institue_logo" class="institute_profile_picture" style="cursor: pointer;">
+                        </section>
+                        <div class="profile_field_holder">
+                            <form action="POST" onclick="" class="field_holder">
+                                <div class="row_one_holder">
+                                    <section class="row_one_field_holder"> 
+                                        <label for="institute_name">نام آموزشگاه:</label>
+                                        <input type="text" placeholder="بدون در نظر گرفتن کلمه آموزشگاه" name="institute_name" class="institute_name" id="institute_name">
+                                    </section>
+                                    <section class="row_one_field_holder">
+                                        <label for="institute_support">تلفن پشتیبانی:</label>
+                                        <input type="number" placeholder="۰۹*********" name="institute_support" class="institute_support" id="institute_support" maxlength="11" minlength="11">
+                                    </section>
+                                    <section class="row_one_field_holder">
+                                        <label for="support_telegram">آیدی تلگرام پشتیبان:</label>
+                                        <input type="text" placeholder="مثلا: golestan_institute" name="support_telegram" class="support_telegram" id="support_telegram">
+                                    </section>
+                                </div>
+                                <div class="row_two_holder">
+                                    <section class="row_two_field_holder_one">
+                                        <label for="address">آدرس آموزشگاه:</label>
+                                        <input type="text" name="address" class="institue_address" placeholder="مثلا: مشهد، خیابان .....">
+                                    </section>
+                                    <section class="row_two_field_holder">
+                                        <label for="instagram">آیدی اینستاگرام:</label>
+                                        <input type="text" name="instagram" class="institute_instagram" id="institute_instagram">
+                                    </section>
+                                </div>
+                                <input type="submit" name="formSubmite" class="profile_submite" value="اعمال تفییرات">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="result_certificate_modal" id="result_certificate_modal">
+                <div class="certificate_modal_inner"></div>
+            </div>
+            <div class="new_question_modal_container" id="new_question_modal_container">
+                <div class="new_question_modal">
+                    <input type="image" id="addQuestion_modal_closer" src="assets/images/close.png" onclick="closeAddQuestionModal()">
+                    <form action="POST" onclick="" class="add_question_form">
+                        <div class="question_adder_title">
+                                <label for="" class="add_question_form_title">افزودن سوال:</label><br>
+                                <input type="text" placeholder="سوال خود را اضافه کنید" class="add_question_form_input" maxlength="150">
+                        </div> 
+                        <div class="question_adder_title">
+                                <label for="" class="add_question_form_title">گزینه درست:</label> <br>
+                                <input type="text" placeholder="گزینه درست را بنویسید" class="add_question_form_input" maxlength="150">
+                        </div> 
+                        <div class="question_adder_title">
+                                <label for="" class="add_question_form_title">گزینه غلط:</label><br>
+                                <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input" maxlength="150"><br>
+                                <input type="image" class="wrong_question_adder" src="assets/images/add_icon.png">
+                        </div> 
+                        <input type="submit" class="add_question_submit_btn" value="ثبت سوال">
+                    </form>
                 </div>
             </div>
         </div>
@@ -103,22 +233,90 @@
 <footer>
     <!--footer of the page-->
     <div class="footer">
-        <section class="footer_section">
+        <section class="footer_section" onclick="showquestion()">
             <img src="assets/images/qa.png" alt="qustions footer icon" class="footer_logo">
             <h4 class="footer_item_title">سوالات</h4>
         </section>
-        <section class="footer_section">
+        <section class="footer_section" onclick="showresults()">
             <img src="assets/images/research.png" alt="qustions footer icon" class="footer_logo">
             <h4 class="footer_item_title">نتایج</h4>
         </section>
-        <section class="footer_section">
+        <section class="footer_section" onclick="showvolunteer()">
             <img src="assets/images/chat.png" alt="qustions footer icon" class="footer_logo">
             <h4 class="footer_item_title">متقاضیان</h4>
         </section>
-        <section class="footer_section">
+        <section class="footer_section" onclick="showpersonel()">
             <img src="assets/images/team.png" alt="qustions footer icon" class="footer_logo">
             <h4 class="footer_item_title">پرسنل</h4>
         </section>
     </div>
 </footer>
 </html>
+<script type="text/javascript">
+    const question = document.getElementById('question_holder');
+    const dashboard = document.getElementById('dashboard_holder');
+    const logoImage = document.getElementById('profile_picture');
+    const personel = document.getElementById('personel_holder');
+    const results = document.getElementById('result_holder');
+    const volunteer = document.getElementById('volunteer_holder');
+    const editor = document.getElementById('profile_editor_holder');
+    const addQuestionModal = document.getElementById('new_question_modal_container');
+    const closeQuestionAddModal = document.getElementById('addQuestion_modal_closer');
+    function showquestion(){    
+        if (question.style.display == 'none' || question.style.display == ''){
+            question.style.display = 'block';
+            dashboard.style.display = 'none';
+            results.style.display = 'none';
+            personel.style.display = 'none';
+            volunteer.style.display = 'none';
+            editor.style.display = 'none';
+        }
+    }
+    function showdashboard(){
+        dashboard.style.display = 'block';
+        question.style.display = 'none';
+        results.style.display = 'none';
+        personel.style.display = 'none';
+        volunteer.style.display = 'none';
+        editor.style.display = 'none';
+    }
+    function showpersonel(){
+        personel.style.display = 'block';
+        dashboard.style.display = 'none';
+        results.style.display = 'none';
+        question.style.display = 'none';
+        volunteer.style.display = 'none';
+        editor.style.display = 'none';
+    }
+    function showresults(){
+        results.style.display = 'block';
+        personel.style.display = 'none';
+        dashboard.style.display = 'none';
+        question.style.display = 'none';
+        volunteer.style.display = 'none';
+        editor.style.display = 'none';
+    }
+    function showvolunteer(){
+        volunteer.style.display = 'block'
+        results.style.display = 'none';
+        personel.style.display = 'none';
+        dashboard.style.display = 'none';
+        question.style.display = 'none';
+        editor.style.display = 'none';
+    }
+    function showeditor(){
+        editor.style.display = 'block';
+        results.style.display = 'none';
+        personel.style.display = 'none';
+        dashboard.style.display = 'none';
+        question.style.display = 'none';
+        volunteer.style.display = 'none';
+    }
+    function showAddQuestionModal(){
+        addQuestionModal.style.display = 'flex';
+
+    }
+    function closeAddQuestionModal(){
+        addQuestionModal.style.display = 'none';
+    }
+</script>
