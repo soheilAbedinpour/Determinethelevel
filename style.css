@@ -29,6 +29,8 @@
 .page_container{
     height: 100vh;
     background-color: var(--gray);
+    width: 100vw;
+    margin-top: -7%;
 }
 .data_container{
     display:flex;
@@ -86,6 +88,8 @@ p{
     background-position-y: center;
     width:120%;
     height: 100vh;
+    margin-left: -5.5%;
+    
 }
 
 /* css code for home page right-hand side text section*/
@@ -876,7 +880,7 @@ label{
 
 /* starting to make home page responsive*/
 @media only screen and (max-width: 600px){
-
+    *{box-sizing: border-box;}
     /*index page*/
     .page_container{
         padding-top: 20px;
@@ -979,6 +983,30 @@ label{
         margin-right: 5%;
     }
     /*end*/
+    /*start personel login responsove*/
+    .personel_login_form_page{
+        width: 100%;
+        height: 100vh;   /* fallback */
+        height: 100svh;  /* mobile-safe full height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.6);
+        background-image: url(assets/images/DSC_0333.jpg);
+        background-size: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .login_form_container{
+        display: block;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+    }
+    .login_form{
+        width: 85%;
+    }
     /*start exam page start*/
     .exam_introduction{
         display: block !important;
@@ -1011,8 +1039,9 @@ label{
     }
     /*end start exam page*/
     /*start personel dashboard page*/
-    body{
+    html, body{
         width: 100%;
+        height: 100%;
         justify-content: center;
         box-sizing: border-box;
         text-align: center;
