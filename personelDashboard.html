@@ -102,7 +102,7 @@
                         </section>
                     </div>
                     <div class="question_list">
-                        <div class="question_repeater">
+                        <div class="question_repeater" onclick="showAddQuestionModal()">
                             <h4 class="question_repeater_title">عنوان سوال میاد و در اینجا قرار میگیره</h4>
                             <p class="category_placement">نام دسته بندی میاد اینجا</p>
                         </div>
@@ -208,20 +208,33 @@
             <div class="new_question_modal_container" id="new_question_modal_container">
                 <div class="new_question_modal">
                     <input type="image" id="addQuestion_modal_closer" src="assets/images/close.png" onclick="closeAddQuestionModal()">
-                    <form action="POST" onclick="" class="add_question_form">
-                        <div class="question_adder_title">
-                                <label for="" class="add_question_form_title">افزودن سوال:</label><br>
-                                <input type="text" placeholder="سوال خود را اضافه کنید" class="add_question_form_input" maxlength="150">
-                        </div> 
-                        <div class="question_adder_title">
-                                <label for="" class="add_question_form_title">گزینه درست:</label> <br>
-                                <input type="text" placeholder="گزینه درست را بنویسید" class="add_question_form_input" maxlength="150">
-                        </div> 
-                        <div class="question_adder_title">
-                                <label for="" class="add_question_form_title">گزینه غلط:</label><br>
-                                <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input" maxlength="150"><br>
-                                <input type="image" class="wrong_question_adder" src="assets/images/add_icon.png">
-                        </div> 
+                    <div class="popUp_container">
+                            <form action="POST" onclick="" class="add_question_form">
+                            <div class="question_adder_title">
+                                    <label for="" class="add_question_form_title">افزودن سوال:</label><br>
+                                    <input type="text" placeholder="سوال خود را اضافه کنید" class="add_question_form_input" maxlength="150">
+                            </div> 
+                            <div class="question_adder_title">
+                                    <label for="" class="add_question_form_title">دسته بندی سوال:</label> <br>
+                                    <select name="question_category_select" id="category_select">
+                                        <option value="grammar">گرامر</option>
+                                        <option value="listening">لیسنینگ</option>
+                                        <option value="reading">ریدینگ</option>
+                                        <option value="writing">رایتینگ</option>
+                                    </select>
+                                </div> 
+                            <div class="question_answer_section">
+                                <div class="question_adder_title">
+                                    <label for="" class="add_question_form_title">گزینه درست:</label> <br>
+                                    <input type="text" placeholder="گزینه درست را بنویسید" class="add_question_form_input" id="answer_question_form" maxlength="150">
+                                </div> 
+                                <div class="question_adder_title">
+                                        <label for="" class="add_question_form_title">گزینه غلط:</label><br>
+                                        <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input" id="answer_question_form" maxlength="150"><br>
+                                        <input type="image" class="wrong_question_adder" src="assets/images/add_icon.png">
+                                </div> 
+                            </div>
+                    </div>
                         <input type="submit" class="add_question_submit_btn" value="ثبت سوال">
                     </form>
                 </div>
