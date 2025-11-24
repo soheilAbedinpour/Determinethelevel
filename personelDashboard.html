@@ -209,10 +209,10 @@
                 <div class="new_question_modal">
                     <input type="image" id="addQuestion_modal_closer" src="assets/images/close.png" onclick="closeAddQuestionModal()">
                     <div class="popUp_container">
-                            <form action="POST" onclick="" class="add_question_form">
+                            <form action="POST" class="add_question_form">
                             <div class="question_adder_title">
                                     <label for="" class="add_question_form_title">افزودن سوال:</label><br>
-                                    <input type="text" placeholder="سوال خود را اضافه کنید" class="add_question_form_input" maxlength="150">
+                                    <input type="text" placeholder="سوال خود را اضافه کنید" class="add_question_form_input" id="title_form" maxlength="150">
                             </div> 
                             <div class="question_adder_title">
                                     <label for="" class="add_question_form_title">دسته بندی سوال:</label> <br>
@@ -224,17 +224,45 @@
                                     </select>
                                 </div> 
                             <div class="question_answer_section">
-                                <div class="question_adder_title">
-                                    <label for="" class="add_question_form_title">گزینه درست:</label> <br>
-                                    <input type="text" placeholder="گزینه درست را بنویسید" class="add_question_form_input" id="answer_question_form" maxlength="150">
-                                </div> 
-                                <div class="question_adder_title">
-                                        <label for="" class="add_question_form_title">گزینه غلط:</label><br>
-                                        <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input" id="answer_question_form" maxlength="150"><br>
-                                        <input type="image" class="wrong_question_adder" src="assets/images/add_icon.png">
-                                </div> 
+
+                            <!-- گزینه درست فقط یک بار -->
+                            <div class="question_adder_answer">
+                                <label class="add_question_form_title">گزینه درست:</label><br>
+                                <input type="text" placeholder="گزینه درست را بنویسید" class="add_question_form_input correct_answer" maxlength="150">
                             </div>
-                    </div>
+
+                            <!-- گزینه غلط 1 -->
+                            <div class="question_adder_answer">
+                                <label class="add_question_form_title">گزینه غلط:</label><br>
+                                <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input wrong_answer" maxlength="150">
+                            </div>
+
+                            <!-- گزینه غلط 2 -->
+                            <div class="question_adder_answer">
+                                <label class="add_question_form_title">گزینه غلط:</label><br>
+                                <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input wrong_answer" maxlength="150">
+                            </div>
+
+                            <!-- گزینه غلط 3 -->
+                            <div class="question_adder_answer">
+                                <label class="add_question_form_title">گزینه غلط:</label><br>
+                                <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input wrong_answer" maxlength="150">
+                            </div>
+
+                            <!-- TEMPLATE مخصوص گزینه غلط -->
+                            <template id="answer_template">
+                                <div class="question_adder_answer">
+                                    <label class="add_question_form_title">گزینه غلط:</label><br>
+                                    <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input wrong_answer" maxlength="150">
+                                </div>
+                            </template>
+
+                        </div>
+                        <!-- دکمه افزودن -->
+                            <button type="button" id="wrong_question_adder" class="wrong_question_adder">
+                            <img src="assets/images/add_icon.png" alt="افزودن گزینه" class="add-icon">
+                        </button>
+                        
                         <input type="submit" class="add_question_submit_btn" value="ثبت سوال">
                     </form>
                 </div>
@@ -275,6 +303,7 @@
     const editor = document.getElementById('profile_editor_holder');
     const addQuestionModal = document.getElementById('new_question_modal_container');
     const closeQuestionAddModal = document.getElementById('addQuestion_modal_closer');
+    
     function showquestion(){    
         if (question.style.display == 'none' || question.style.display == ''){
             question.style.display = 'block';
@@ -332,4 +361,104 @@
     function closeAddQuestionModal(){
         addQuestionModal.style.display = 'none';
     }
+    document.addEventListener('DOMContentLoaded', () => {
+  const MAX_WRONG = 8;
+  const addBtn = document.getElementById('wrong_question_adder') || document.querySelector('.wrong_question_adder');
+  const container = document.querySelector('.question_answer_section');
+  const template = document.getElementById('answer_template');
+
+  if (!container || !template || !addBtn) {
+    // اگر المان‌ها پیدا نشدن، خروجی می‌زنیم تا خطا در کنسول ببینی
+    console.warn('JS repeater: required element(s) not found.', { addBtn, container, template });
+    return;
+  }
+
+  // جلوگیری از submit شدن فرم وقتی دکمه داخل فرم است (مثلاً input type="image")
+  addBtn.addEventListener('click', function (e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation && e.stopPropagation();
+    }
+    addWrongField();
+  });
+
+  // تابع شمارش گزینه‌های غلط فعلی
+  function countWrong() {
+    // معیار: input هایی که کلاس wrong_answer دارند
+    return container.querySelectorAll('input.wrong_answer').length;
+  }
+
+  function addWrongField() {
+    const currentWrong = countWrong();
+    if (currentWrong >= MAX_WRONG) {
+      // می‌تونی این alert رو به پیام زیباتر یا tooltip تغییر بدی
+      alert(`حداکثر ${MAX_WRONG} گزینهٔ غلط مجاز است.`);
+      // اختیاری: غیرفعال کردن دکمه
+      if (addBtn.tagName.toLowerCase() === 'button' || addBtn.tagName.toLowerCase() === 'input') {
+        addBtn.disabled = true;
+      }
+      return;
+    }
+
+    // کلون از template
+    const cloneNode = template.content.firstElementChild.cloneNode(true);
+
+    // حذف هر id تکراری داخل کلون (اگر قالب یا input ها id دارند)
+    const nodesWithId = cloneNode.querySelectorAll('[id]');
+    nodesWithId.forEach(n => n.removeAttribute('id'));
+
+    // اگر خودِ المان ریشه داخل template id دارد، بردار
+    if (cloneNode.hasAttribute && cloneNode.hasAttribute('id')) cloneNode.removeAttribute('id');
+
+    // اگر input داخل کلون کلاس wrong_answer ندارد، تلاش کن آن را پیدا و اضافه کن
+    const input = cloneNode.querySelector('input');
+    if (input && !input.classList.contains('wrong_answer')) {
+      input.classList.add('wrong_answer');
+      // و اگر نام فیلد لازم باشه آرایه‌ای کن (در HTML اصلی باید همین نام‌ها باشند)
+      if (!input.hasAttribute('name')) {
+        input.setAttribute('name', 'answers[wrong][]');
+      }
+    }
+
+    // ایجاد دکمه حذف دینامیک (اگر قالب از قبل حذف ندارد)
+    let removeBtn = cloneNode.querySelector('.remove-answer');
+    if (!removeBtn) {
+      removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.className = 'remove-answer';
+      // قرار دادن دکمه حذف داخل کلون (بالا سمت چپ/راست بسته به CSS)
+      cloneNode.appendChild(removeBtn);
+    }
+
+    // اتصال رویداد حذف
+    removeBtn.addEventListener('click', () => {
+      cloneNode.remove();
+      // در صورت غیرفعال بودن دکمه افزودن و اکنون کمتر از حد داریم، دوباره فعالش کن
+      if (addBtn.disabled && countWrong() < MAX_WRONG) {
+        addBtn.disabled = false;
+      }
+    });
+
+    // اضافه کردن به کانتینر و اسکرول به انتها
+    container.appendChild(cloneNode);
+    container.scrollTo({ left: container.scrollWidth, behavior: 'smooth' });
+
+    // فوکوس روی input جدید
+    const newInput = cloneNode.querySelector('input.add_question_form_input, input.wrong_answer, input[type="text"]');
+    if (newInput) newInput.focus();
+
+    // اگر بعد از اضافه کردن به سقف رسیدیم، می‌تونیم دکمه رو غیرفعال کنیم
+    if (countWrong() >= MAX_WRONG) {
+      addBtn.disabled = true;
+    }
+  }
+
+  // اختیاری: جلوگیری از ارسال فرم با Enter داخل input ها (تا موقعی که قصد فرستادن نداریم)
+  // اگر نمی‌خواهی این رفتار، می‌تونی این بخش را حذف کنی.
+  container.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && e.target && e.target.matches('input')) {
+      e.preventDefault();
+    }
+  });
+});
 </script>

@@ -821,15 +821,31 @@ label{
     transition: all 0.3s ease-in-out;
 }
 .wrong_question_adder{
-    width: 25px;
+    width: 48px;
+    height: 48px;
     background-color:var(--white2);
-    padding: 7%;
+    padding: 1.5%;
     border-radius: 100px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     float: left;
     margin-top: 20px;
     margin-right: 25px !important; 
     position: relative;
+    justify-content: center;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+}
+
+.wrong_question_adder .add-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  object-fit: contain;
+  text-align: center;
+}
+.aadd_question_btn_icon{
+    width: 10%;
 }
 .new_question_modal{
     width: 97%;
@@ -838,12 +854,25 @@ label{
     background-color: rgba(0, 0, 0, 0);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0);
     transition: 0.2s ease-in-out;
+    cursor: pointer;
 }
-
-
+.question_repeater_holder{
+    display: flex;
+}
+.question_repeater_holder{
+    width: 20%;
+    float: left;
+}
 .question_adder_title{
     margin-top: 40px;
     display: block;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.question_adder_answer{
+    width: 25%;
+    margin-top: 40px;
 }
 .add_question_form_input, #category_select{
     height: 47px;
@@ -859,10 +888,14 @@ label{
     padding-left: 2%;
     margin-top: 10px;
 }
+#answer_question_form{
+    padding-right: 10px;
+    box-sizing: border-box;
+}
 .add_question_submit_btn{
     background-color: var(--red);
     width: 20%;
-    margin-top: 100px;
+    margin-top: 80px;
     border-radius: 6px;
     border: 0px;
     height: 35px;
@@ -889,6 +922,22 @@ label{
     display: flex;
     width: 100%;
     column-gap: 30px;
+    margin-top: 10px;
+    overflow-x: auto;
+    overflow-y: none;
+    flex-wrap: nowrap !important; 
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+.question_adder_answer{
+    flex: 0 0 auto !important;
+    min-width: 20%;
+}
+#title_form{
+    width: 96%;
+}
+#category_select{
+    padding-left: 2%;
 }
 .add_question_form_input:focus, #category_select:focus{
     outline: none;
