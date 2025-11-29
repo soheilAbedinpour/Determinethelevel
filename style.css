@@ -507,7 +507,7 @@ label{
 .quick_action_one{
     background-color: var(--white2);
     border-radius: 10px;
-    height: max-content;
+    height: fit-content;
     align-content: center;
     padding: 3%;
     box-sizing: border-box;
@@ -533,6 +533,7 @@ label{
     background-color: var(--white2);
     text-align: right;
     color: var(--black);
+    margin-top: 15px;
 }
 .add_question_button:hover{
     background-color: var(--green);
@@ -680,6 +681,7 @@ label{
     box-sizing: border-box;
     padding: 3%;
     margin-bottom: 15px !important;
+    cursor: pointer;
 }
 .result_container{
     margin-bottom: 50px !important;
@@ -921,6 +923,7 @@ label{
 .question_answer_section{
     display: flex;
     width: 100%;
+    padding-bottom: 20px;
     column-gap: 30px;
     margin-top: 10px;
     overflow-x: auto;
@@ -945,7 +948,95 @@ label{
 option{
     margin-right: 20px;
 }
+/*end of add question popup*/
 
+/*start of certificate popup modal*/
+.result_certificate_modal{
+    position: fixed;
+    width: 70%;
+    border-radius: 10px;
+    background-color: var(--black);
+    padding: 3%;
+    display: none;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 80vh;
+    top: 10%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.certificate_content_holder{
+    display: block;
+    width: 100%;
+    justify-content: center;
+}
+.certificate_secondary_title, .certificate_primary_title{
+    width: 100%;
+    text-align: center;
+    line-height: 1.7em;
+    color: var(--white2);   
+}
+.certificate_secondary_title{
+    font-family: 'peyda-light';
+    font-size: 14px;
+    color: #ced4da !important;
+}
+.paragraph_certificate{
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    color: var(--white2);
+    font-size: 14px;
+    margin-top: 2%;
+}
+.certificate_box_holder{
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: none;
+    justify-content: center;
+    column-gap: 30px;
+    margin-top: 60px;
+}
+.certificate_box_model{
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    background-color: rgba(52, 58, 64, 0.9);
+    background-blend-mode: multiply;
+    height: 250px;
+    border-radius: 5px;
+    align-items:flex-start;
+    justify-content: flex-end;
+    padding-bottom: 3%;
+    padding-right: 1.5%;
+    box-sizing: border-box;
+    background-image: url(assets/images/viktor-forgacs-x7h5HLsBYwo-unsplash\ \(1\).jpg);
+    background-size: cover;
+}
+.certificate_box_subTitle{
+    display: none;
+    color: var(--white2);
+    font-family: 'peyda-light';
+    font-size: 14px;
+}
+.certificate_box_title{
+    font-size: 16px;
+    color: var(--white2);
+}
+.certificate_box_model:hover{
+    border: 1px solid #c6ac8f;
+    transition: 0.3s ease-in-out;
+}
+.certificate_box_model:hover .certificate_box_subTitle{
+    display: block;
+}
+.certificate_box_holder_phone{
+    display: none;
+}
+/*end of certificate modal*/
 /* starting to make home page responsive*/
 @media only screen and (max-width: 600px){
     *{box-sizing: border-box;}
@@ -956,7 +1047,13 @@ option{
         padding-left: 20px;
         padding-right: 20px;
     }
-    
+    .add_question_form_input{
+        width: 100% !important;
+    }
+    .question_adder_answer{
+        width: 80%;
+
+    }
     .data_container{
         display: inline-block;
         max-width: 100%;
@@ -1252,7 +1349,7 @@ option{
     right: 0;
     justify-content: space-around;
     align-items: center;
-    z-index: 999;
+    z-index: 800;
     border-top: 1px solid #e0e0e0;
     }
     .footer_section{
@@ -1342,7 +1439,7 @@ option{
         right: 0;
         left: 0;
         bottom: 0;
-        height: 80svh;
+        height: 90svh;
         transition: all 0.3s ease-in-out;
         z-index: 998;
     }
@@ -1368,5 +1465,60 @@ option{
         overflow-y: auto;
         padding: 0px;
         margin: 0px;
+        align-items: center;
+        justify-content: center;
+    }
+    .wrong_question_adder{
+        margin-top: 10px;
+    }
+    .add_question_submit_btn{
+         margin-top: 20px;
+    }
+    /*end of add question modal*/
+    
+    /*start of certificate modal*/
+    .result_certificate_modal{
+        width: 95svw;
+        height: 90svh;
+        z-index: 999;
+        top: 20px;
+        box-sizing: border-box;
+    }
+    .paragraph_certificate{
+        width: 90%;
+        font-size: 12px;
+    }
+    .certificate_modal_inner{
+        padding-top: 5%;
+        box-sizing: border-box;
+        padding-bottom: 5%;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+    .certificate_primary_title{
+        line-height: 1.5em;
+        font-size: 24px;
+    }
+    .certificate_box_holder{
+        display: none;
+    }
+    .certificate_box_holder_phone{
+        display: block;
+        row-gap: 20px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        column-gap: 20px;
+    }
+    .first_row, .second_row{
+        display: flex;
+        column-gap: 20px;
+        margin-top: 20px;
+    }
+    .certificate_box_model{
+        height: 25svh;
+        width: 50%;
+    }
+    .certificate_box_title{
+        font-size: 16px;
     }
 }

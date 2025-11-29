@@ -156,10 +156,10 @@
                             <button type="button" class="students_list_btn" onclick="showvolunteer()">لیست متقاضیان</button>
                         </section>
                     </div>
-                    <div class="result_container" style="margin-top: 5%; margin-bottom: 50px; display: block;">
+                    <div class="result_container" style="margin-top: 5%; margin-bottom: 50px; display: block;" onclick="showCertificateModal()">
                         <div class="result_repeater"> 
                             <h4 style="margin-bottom: 10px; line-height: 2em; text-align: justify;">نام و نام خانوادگی متقاضی</h4>
-                            <p>نمره آزمون: <span>82</span></p>
+                            <p>نمره آزمون: <span id="result_scrore_repeater">82</span></p>
                         </div>
                     </div>
                 </div>
@@ -203,12 +203,60 @@
                 </div>
             </div>
             <div class="result_certificate_modal" id="result_certificate_modal">
-                <div class="certificate_modal_inner"></div>
+                <div class="certificate_modal_inner">
+                    <input type="image" id="addQuestion_modal_closer" src="assets/images/close2.png" onclick="closeCertificate()">
+                    <div class="certificate_content_holder">
+                        <h4 class="certificate_secondary_title">کارنامه تعیین سطح</h4>
+                        <h2 class="certificate_primary_title">نام زبان آموز:  <span class="student_name_primary">سهیل عابدین پور </span></h2>
+                        <p class="paragraph_certificate">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز</p>
+                    </div>
+                    <div class="certificate_box_holder">
+                        <section class="certificate_box_model grammar_box">
+                            <h4 class="certificate_box_title">نتیجه آزمون گرامر</h4>
+                            <h5 class="certificate_box_subTitle">نتیجه آزمون: <span class="grammar_score" id="grammar_score">10</span>/10</h5>
+                        </section>
+                        <section class="certificate_box_model listening_box">
+                            <h4 class="certificate_box_title">نتیجه آزمون لیسینینگ</h4>
+                            <h5 class="certificate_box_subTitle">نتیجه آزمون: <span class="listening_score" id="listening_score">10</span>/10</h5>
+                        </section>
+                        <section class="certificate_box_model writing_box">
+                            <h4 class="certificate_box_title">نتیجه آزمون رایتینگ</h4>
+                            <h5 class="certificate_box_subTitle">نتیجه آزمون: <span class="writing_score" id="writing_score">10</span>/10</h5>
+                        </section>
+                        <section class="certificate_box_model reading_box">
+                            <h4 class="certificate_box_title">نتیجه آزمون ریدینگ</h4>
+                            <h5 class="certificate_box_subTitle">نتیجه آزمون: <span class="reading_score" id="reading_score">10</span>/10</h5>
+                        </section>
+                    </div>
+                    <div class="certificate_box_holder_phone">
+                        <div class="first_row">
+                            <section class="certificate_box_model grammar_box">
+                                <h4 class="certificate_box_title">آزمون گرامر</h4>
+                                <h5 class="certificate_box_subTitle">نتیجه آزمون: <span class="grammar_score" id="grammar_score">10</span>/10</h5>
+                            </section>
+                            <section class="certificate_box_model listening_box">
+                                <h4 class="certificate_box_title">آزمون لیسینینگ</h4>
+                                <h5 class="certificate_box_subTitle">نتیجه آزمون: <span class="listening_score" id="listening_score">10</span>/10</h5>
+                            </section>
+                        </div>
+                        <div class="second_row">
+                            <section class="certificate_box_model writing_box">
+                                <h4 class="certificate_box_title">آزمون رایتینگ</h4>
+                                <h5 class="certificate_box_subTitle">نتیجه آزمون: <span class="writing_score" id="writing_score">10</span>/10</h5>
+                            </section>
+                            <section class="certificate_box_model reading_box">
+                                <h4 class="certificate_box_title">آزمون ریدینگ</h4>
+                                <h5 class="certificate_box_subTitle">نتیجه آزمون: <span class="reading_score" id="reading_score">10</span>/10</h5>
+                            </section>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="new_question_modal_container" id="new_question_modal_container">
                 <div class="new_question_modal">
                     <input type="image" id="addQuestion_modal_closer" src="assets/images/close.png" onclick="closeAddQuestionModal()">
                     <div class="popUp_container">
+                        
                             <form action="POST" class="add_question_form">
                             <div class="question_adder_title">
                                     <label for="" class="add_question_form_title">افزودن سوال:</label><br>
@@ -224,31 +272,26 @@
                                     </select>
                                 </div> 
                             <div class="question_answer_section">
-
                             <!-- گزینه درست فقط یک بار -->
                             <div class="question_adder_answer">
                                 <label class="add_question_form_title">گزینه درست:</label><br>
                                 <input type="text" placeholder="گزینه درست را بنویسید" class="add_question_form_input correct_answer" maxlength="150">
                             </div>
-
                             <!-- گزینه غلط 1 -->
                             <div class="question_adder_answer">
                                 <label class="add_question_form_title">گزینه غلط:</label><br>
                                 <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input wrong_answer" maxlength="150">
                             </div>
-
                             <!-- گزینه غلط 2 -->
                             <div class="question_adder_answer">
                                 <label class="add_question_form_title">گزینه غلط:</label><br>
                                 <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input wrong_answer" maxlength="150">
                             </div>
-
                             <!-- گزینه غلط 3 -->
                             <div class="question_adder_answer">
                                 <label class="add_question_form_title">گزینه غلط:</label><br>
                                 <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input wrong_answer" maxlength="150">
                             </div>
-
                             <!-- TEMPLATE مخصوص گزینه غلط -->
                             <template id="answer_template">
                                 <div class="question_adder_answer">
@@ -256,13 +299,11 @@
                                     <input type="text" placeholder="گزینه غلط را بنویسید" class="add_question_form_input wrong_answer" maxlength="150">
                                 </div>
                             </template>
-
                         </div>
                         <!-- دکمه افزودن -->
                             <button type="button" id="wrong_question_adder" class="wrong_question_adder">
                             <img src="assets/images/add_icon.png" alt="افزودن گزینه" class="add-icon">
                         </button>
-                        
                         <input type="submit" class="add_question_submit_btn" value="ثبت سوال">
                     </form>
                 </div>
@@ -273,7 +314,7 @@
 </body>
 <footer>
     <!--footer of the page-->
-    <div class="footer">
+    <div class="footer" id="footer">
         <section class="footer_section" onclick="showquestion()">
             <img src="assets/images/qa.png" alt="qustions footer icon" class="footer_logo">
             <h4 class="footer_item_title">سوالات</h4>
@@ -303,7 +344,12 @@
     const editor = document.getElementById('profile_editor_holder');
     const addQuestionModal = document.getElementById('new_question_modal_container');
     const closeQuestionAddModal = document.getElementById('addQuestion_modal_closer');
-    
+    const footerPhoneView = document.getElementById('footer');
+    const certicateResult = document.getElementById('result_certificate_modal');
+
+    function showCertificateModal(){
+        certicateResult.style.display = 'flex';
+    }
     function showquestion(){    
         if (question.style.display == 'none' || question.style.display == ''){
             question.style.display = 'block';
@@ -356,10 +402,12 @@
     }
     function showAddQuestionModal(){
         addQuestionModal.style.display = 'flex';
-
     }
     function closeAddQuestionModal(){
         addQuestionModal.style.display = 'none';
+    }
+    function closeCertificate(){
+        certicateResult.style.display = 'none';
     }
     document.addEventListener('DOMContentLoaded', () => {
   const MAX_WRONG = 8;
